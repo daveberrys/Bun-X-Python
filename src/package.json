@@ -1,0 +1,14 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.py",
+  "scripts": {
+    "dev": "venv/Scripts/python main.py --dev",
+    "pip": "venv/Scripts/pip install",
+    "init": "python -m venv venv && venv/Scripts/pip install -r requirements.txt"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

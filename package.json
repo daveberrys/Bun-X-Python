@@ -1,0 +1,17 @@
+{
+  "name": "bunxpythontest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "workspaces": ["src", "web"],
+  "scripts": {
+    "dev": "bun run --filter '*' dev",
+    "pip": "bun run --filter src pip",
+    "init": "bun run --filter src init",
+    "kill": "npx kill-port 5173"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "bun@1.3.5"
+}

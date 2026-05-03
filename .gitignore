@@ -1,0 +1,10 @@
+# python src
+src/*venv*
+__pycache__
+src/*.pyc
+
+# vite app
+app/dist
+
+# extras
+node_modules
