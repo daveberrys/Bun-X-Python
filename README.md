@@ -10,7 +10,7 @@ This project initializes SolidJS with Vite by default. Yes, you can change it. J
 - To run the app, just do `bun run dev`.
 
 ## How to compile it?
-As of right now, you can't compile it. But, in the future, I might find a way to compile everything to a `.exe`, `.dmg`, and etc...
+You can compile the app using `bun run build`! But, no installer yet. Maybe in the future.
 
 ## How does it work?
 By using `pywebview` cause that's the only way I know how to make a web window while contacting python's backend.
