@@ -5,10 +5,15 @@
   "main": "index.js",
   "workspaces": ["src", "web"],
   "scripts": {
+    "build:web": "bun run --filter web build",
+    "build:py": "src/venv/Scripts/pyinstaller build.spec --clean --noconfirm",
+    "build:onefile": "bun run build:web && src/venv/Scripts/pyinstaller build.spec --onefile --clean --noconfirm",
+    
     "dev": "bun run --filter '*' dev",
     "pip": "bun run --filter src pip",
     "init": "bun run --filter src init",
-    "kill": "npx kill-port 5173"
+    "build": "bun run build:web && bun run build:py",
+    "kill": "echo \"Killing thrice...\" && npx kill-port 5173 && npx kill-port 5173 && npx kill-port 5173 && echo \"Done!\""
   },
   "keywords": [],
   "author": "",

@@ -2,9 +2,13 @@
 src/*venv*
 __pycache__
 src/*.pyc
+src/build
+src/dist
 
 # vite app
-app/dist
+web/dist
 
 # extras
 node_modules
+build
+dist
