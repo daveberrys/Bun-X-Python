@@ -1,5 +1,5 @@
 # BUN X PYTHON
-Just a proof of concept where workspaces can work together. This might be intergraded with [Pyder](https://github.com/PinpointTools/Pyder) :D
+Just a proof of concept where workspaces with different languages can work together. This might be intergraded with [Pyder](https://github.com/PinpointTools/Pyder) :D
 
 This project initializes SolidJS with Vite by default. Yes, you can change it. Just do it yourself, lmao.
 
@@ -14,6 +14,10 @@ You can compile the app using `bun run build`! But, no installer yet. Maybe in t
 
 ## How does it work?
 By using `pywebview` cause that's the only way I know how to make a web window while contacting python's backend.
+
+![preview](readme/preview.png)
+
+Currently, it only works for windows because the path *is* for windows. Just configure that yourself if you're in a different os like unix: `venv/bin/python` and `venv/bin/pip` and whatnot.
 
 #
 
