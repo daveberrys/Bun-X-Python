@@ -32,7 +32,7 @@ def window():
     wv.start(
         private_mode=True,
         debug=args.dev,
-        icon=str(getResourcePath("web/public/vite.ico"))
+        icon=str(getResourcePath("web/public/vite.png"))
     )
 
 if __name__ == "__main__":
