@@ -2,18 +2,19 @@
 import os
 from pathlib import Path
 
-block_cipher = None
+blockCipher = None
 
 # Paths relative to project root (cwd when running build)
-project_root = Path(os.getcwd())
-src_dir = project_root / "src"
-web_dist = project_root / "web" / "dist"
+projectRoot = Path(os.getcwd())
+srcDir = projectRoot / "src"
+webDist = projectRoot / "web" / "dist"
+iconPath = projectRoot / "web" / "public" / "vite.png"
 
 a = Analysis(
-    [str(src_dir / "main.py")],
+    [str(srcDir / "main.py")],
     pathex=[],
     binaries=[],
-    datas=[(str(src_dir / "package.json"), "src"), (str(web_dist), "web/dist")],
+    datas=[(str(srcDir / "package.json"), "src"), (str(webDist), "web/dist")],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -22,7 +23,7 @@ a = Analysis(
     noarchive=False,
     optimize=0,
 )
-pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
+pyz = PYZ(a.pure, a.zipped_data, cipher=blockCipher)
 
 exe = EXE(
     pyz,
@@ -40,6 +41,7 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon=str(iconPath),
 )
 coll = COLLECT(
     exe,
@@ -48,5 +50,5 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name="bunxpythontest",
+    name="Bun X Python Test",
 )

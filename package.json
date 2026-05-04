@@ -7,7 +7,6 @@
   "scripts": {
     "build:web": "bun run --filter web build",
     "build:py": "src/venv/Scripts/pyinstaller build.spec --clean --noconfirm",
-    "build:onefile": "bun run build:web && src/venv/Scripts/pyinstaller build.spec --onefile --clean --noconfirm",
     
     "dev": "bun run --filter '*' dev",
     "pip": "bun run --filter src pip",

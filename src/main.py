@@ -3,8 +3,11 @@ import json
 import sys
 import pathlib
 import argparse
+from API import API
 
-def get_resource_path(relative_path):
+appName = "Bun X Python"
+
+def getResourcePath(relative_path):
     if getattr(sys, "frozen", False) and hasattr(sys, "_MEIPASS"):
         return pathlib.Path(sys._MEIPASS) / relative_path
     return pathlib.Path(__file__).parent / relative_path
@@ -15,24 +18,21 @@ def window():
     args = parser.parse_args()
 
     if args.dev:
-        pkg_path = get_resource_path("package.json")
         url = "http://localhost:5173"
     else:
-        pkg_path = get_resource_path("src/package.json")
-        dist_path = get_resource_path("web/dist/index.html")
-        url = f"file:///{dist_path.as_posix()}"
-
-    with open(pkg_path) as f:
-        package = json.load(f)
+        distPath = getResourcePath("web/dist/index.html")
+        url = f"file:///{distPath.as_posix()}"
 
     wv.create_window(
-        title=package["name"],
-        url=url
+        title=appName,
+        url=url,
+        js_api=API()
     )
 
     wv.start(
         private_mode=True,
         debug=args.dev,
+        icon=str(getResourcePath("web/public/vite.ico"))
     )
 
 if __name__ == "__main__":
